@@ -33,19 +33,20 @@ class SignInFormBase extends Component {
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
-        this,this.setState({ error });
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.HOME)
       });
 
       event.preventDefault();
   };
 
   onChange = event => {
-    this,this.setState ({ [event.target.name] : event.targer.value });
+    this.setState ({ [event.target.name] : event.target.value });
   };
 
   render() {
     const { email, password, error} = this.state;
-
+    const isInvalid = password === '' || email === '';
     return (
       <form onSubmit={this.onSubmit}>
         <input
