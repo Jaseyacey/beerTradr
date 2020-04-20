@@ -19,10 +19,14 @@ const SignUpPage = () => (
   };
 
   class SignUpForm extends Component {
-
+    constructor(props) {
+      super(props);
+      this.state = { ...INITIAL_STATE };
+    }
     onChange = event => {
       this.setState({ [event.target.name]: event.target.value });
-    };
+    };  
+    
     render() {
       const {
         username,
@@ -31,6 +35,13 @@ const SignUpPage = () => (
         passwordTwo,
         error,
       } = this.state;
+
+      const isInvalid = 
+        passwordOne !== passwordTwo ||
+        passwordOne === '' ||
+        email === '' ||
+        username === ''; 
+
       return (
         <form onSubmit={this.onSubmit}>
           <input
@@ -61,8 +72,12 @@ const SignUpPage = () => (
             type="password"
             placeholder="Confirm Password"
           />
-          <button type="submit">Sign Up</button>
+          <button disabled ={isInvalid} type="submit">
+            Sign Up
+          </button>
+          
           {error && <p>{error.message}</p>}
+          
         </form>
       );
     }
