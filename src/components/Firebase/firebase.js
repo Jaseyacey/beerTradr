@@ -1,5 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import { Component } from 'react';
+import { FirebaseContext } from '../SignUp';
 
 const config = {
     apiKey: "AIzaSyDSb9XgKL13aZdreKuQhN3jUQ3Vj1IVHz4",
@@ -31,5 +33,11 @@ class Firebase {
 
     doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 }
+
+export const withFirebase = Component => props => (
+    <FirebaseContext.Consumer>
+        {firebase => <Component { ...props } firebsae={firebase} />}
+    </FirebaseContext.Consumer>
+);
 
 export default Firebase; 
