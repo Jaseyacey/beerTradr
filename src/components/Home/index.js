@@ -4,4 +4,6 @@ const Home = () => (
     <h1>Home</h1>
   </div>
 );
+const condition = authUser => !!authUser;
+
 export default Home;

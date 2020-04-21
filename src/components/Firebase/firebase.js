@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import { Component } from 'react';
-import { FirebaseContext } from '../SignUp';
+// import { Component } from 'react';
+// import { FirebaseContext } from '../SignUp';
 
 const config = {
     apiKey: "AIzaSyDSb9XgKL13aZdreKuQhN3jUQ3Vj1IVHz4",
