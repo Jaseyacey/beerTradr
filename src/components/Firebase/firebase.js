@@ -14,30 +14,27 @@ const config = {
     measurementId: "G-P6MKZMLG0D"
   };
 
-class Firebase {
+  class Firebase {
     constructor() {
-        app.initializeApp(config);
-
-        this.auth = app.auth();
+      app.initializeApp(config);
+  
+      this.auth = app.auth();
     }
-// Auth API 
-    doCreateUserWihtEmailAndPassword = (email, password) => 
-        this.auth.createUserWithEmailAndPassword(email, password);
-
-    doSignInWithEmailAndPassword = (email, password) => 
-        this.auth.signInWithEmailAndPassword(email, password);
-
+  
+    // *** Auth API ***
+  
+    doCreateUserWithEmailAndPassword = (email, password) =>
+      this.auth.createUserWithEmailAndPassword(email, password);
+  
+    doSignInWithEmailAndPassword = (email, password) =>
+      this.auth.signInWithEmailAndPassword(email, password);
+  
     doSignOut = () => this.auth.signOut();
-
-    doPasswordReset = email => this.auth.sendPasswordResetEmail
-
-    doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
-}
-
-export const withFirebase = Component => props => (
-    <FirebaseContext.Consumer>
-        {firebase => <Component { ...props } firebsae={firebase} />}
-    </FirebaseContext.Consumer>
-);
-
-export default Firebase; 
+  
+    doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
+  
+    doPasswordUpdate = password =>
+      this.auth.currentUser.updatePassword(password);
+  }
+  
+  export default Firebase;
