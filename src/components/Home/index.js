@@ -1,11 +1,13 @@
 import React from 'react';
-
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import { withAuthorization } from '../Session';
 
 const HomePage = () => (
   <div>
-    <h1>Home Page</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
+    <Jumbotron flair>
+      <h1>beerTradr</h1>
+      <h3>The No 1 Craft Beer Trading App</h3>
+    </Jumbotron>
   </div>
 );
 
