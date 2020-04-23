@@ -15,3 +15,10 @@ code {
 .userHomePage {
   text-align: center;
 }
+
+.beerContainer {
+  font: 500;
+}
+.addBeerForm {
+  content: center;
+}

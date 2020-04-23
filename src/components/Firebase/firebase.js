@@ -1,6 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-
+import 'firebase/storage'
 const config = {
     apiKey: "AIzaSyDSb9XgKL13aZdreKuQhN3jUQ3Vj1IVHz4",
     authDomain: "beertradr.firebaseapp.com",
@@ -35,4 +35,6 @@ class Firebase {
     this.auth.currentUser.updatePassword(password);
 }
 
-export default Firebase;
+
+
+export default Firebase;  

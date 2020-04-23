@@ -4,16 +4,23 @@ import { AuthUserContext } from '../Session';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { withAuthorization } from '../Session';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import ImageUpload from '../ImageUpload/index';
 
 const AccountPage = () => (
+  
   <AuthUserContext.Consumer>
     {authUser => (
-      <div>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-      </div>
+      <div className = "userHomePage">
+        <Jumbotron flair>
+        <h1>{authUser.email}</h1>
+        </Jumbotron>
+        <imageUpload />
+        <form>
+        </form>
+      </div>  
     )}
+          
   </AuthUserContext.Consumer>
 );
 
