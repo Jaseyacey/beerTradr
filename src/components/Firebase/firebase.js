@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/storage'
+import storage from '../Firebase/storage';
+
 const config = {
     apiKey: "AIzaSyDSb9XgKL13aZdreKuQhN3jUQ3Vj1IVHz4",
     authDomain: "beertradr.firebaseapp.com",
@@ -15,10 +16,10 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config);
-
     this.auth = app.auth();
+    this.storage = Firebase.storage();
   }
-
+  
   // *** Auth API ***
 
   doCreateUserWithEmailAndPassword = (email, password) =>
@@ -33,8 +34,13 @@ class Firebase {
 
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
-}
+    
+    // *** Image API *** 
+
+doImageUpload = (Image) => 
+  this.auth.ImageUpload(Image);
+  }
 
 
 
-export default Firebase;  
+export { Firebase, storage as default };

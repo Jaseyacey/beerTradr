@@ -5,7 +5,7 @@ import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { withAuthorization } from '../Session';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import ImageUpload from '../ImageUpload/index';
+
 
 const AccountPage = () => (
   
@@ -15,7 +15,7 @@ const AccountPage = () => (
         <Jumbotron flair>
         <h1>{authUser.email}</h1>
         </Jumbotron>
-        <imageUpload />
+        
         <form>
         </form>
       </div>  
