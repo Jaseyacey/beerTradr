@@ -51,6 +51,7 @@ const config = {
     measurementId: "G-P6MKZMLG0D"
 };
 
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
@@ -75,8 +76,8 @@ class Firebase {
 
     // *** Image API *** 
 
-  // doImageUpload = (Image) => 
-  //   this.auth.ImageUpload(Image);
+  doImageUpload = (Image) => 
+    this.auth.ImageUpload(Image);
   }
 
 
