@@ -1,11 +1,20 @@
 import React from 'react';
-
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Container from 'react-bootstrap/Container'
 import { withAuthorization } from '../Session';
+import navbar from '../Navbar/navbar'
 
 const HomePage = () => (
-  <div>
-    <h1>Home Page</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
+  <div className = "userHomePage">
+    <navbar />
+    <Jumbotron fluid>
+      <Container>
+        <h1>beerTradr</h1>
+        <p>
+          The No 1 Craft Beer Trading Site
+        </p>
+      </Container>
+    </Jumbotron>
   </div>
 );
 

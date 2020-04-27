@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
@@ -30,7 +29,7 @@ class SignUpFormBase extends Component {
     const { username, email, passwordOne } = this.state;
 
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, passwordOne)
+      .doCreateUserWithEmailAndPassword(email, passwordOne, username)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
@@ -68,7 +67,7 @@ class SignUpFormBase extends Component {
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Full Name"
+          placeholder="Username"
         />
         <input
           name="email"

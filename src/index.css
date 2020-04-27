@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.userHomePage {
+  text-align: center;
+}
+
+.beerContainer {
+  font-weight: 500;
+}
+.addBeerForm {
+  content: center;
+}
+.signinform {
+  background-color: red;
+}
+.green-text {
+    font-family: cursive;
+}

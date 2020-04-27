@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
+import Form from 'react-bootstrap/Form';
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
+<div className="userHomePage">
+    <Jumbotron>
+      <h1>Sign In</h1>
+    </Jumbotron>
+        <SignInForm />
+        <PasswordForgetLink />
+        <SignUpLink />
+</div>
 );
 
 const INITIAL_STATE = {
@@ -51,10 +54,10 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state;
-
     const isInvalid = password === '' || email === '';
-
+    
     return (
+      <Form.Group controlId="formBasicEmail">     
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
@@ -70,12 +73,12 @@ class SignInFormBase extends Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button variant="primary" disabled={isInvalid} type="submit">
           Sign In
         </button>
-
         {error && <p>{error.message}</p>}
       </form>
+      </Form.Group>
     );
   }
 }
