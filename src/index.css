@@ -17,8 +17,14 @@ code {
 }
 
 .beerContainer {
-  font: 500;
+  font-weight: 500;
 }
 .addBeerForm {
   content: center;
+}
+.signinform {
+  background-color: red;
+}
+.green-text {
+    font-family: cursive;
 }

@@ -35,7 +35,7 @@
 //   doPasswordUpdate = password =>
 //     this.auth.currentUser.updatePassword(password);
 
-// export { Firebase, storage as default };
+// export default Firebase; 
 
 import app from 'firebase/app';
 import 'firebase/auth';
@@ -75,8 +75,8 @@ class Firebase {
 
     // *** Image API *** 
 
-  doImageUpload = (Image) => 
-    this.auth.ImageUpload(Image);
+  // doImageUpload = (Image) => 
+  //   this.auth.ImageUpload(Image);
   }
 
 

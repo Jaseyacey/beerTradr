@@ -1,13 +1,13 @@
 import React from "react";
 
-export default class FetchRandomBeer extends React.Component {
+class FetchRandomBeer extends React.Component {
   state = {
-    loading: true,
+    loading: false,
     beer: null
   };
 
   async componentDidMount() {
-    const url = "GET https://jsonplaceholder.typicode.com";
+    const url = "";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ beer: data.results[0], loading: false });
@@ -29,3 +29,5 @@ export default class FetchRandomBeer extends React.Component {
     );
   }
 }
+
+export default FetchRandomBeer;

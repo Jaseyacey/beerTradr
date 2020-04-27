@@ -19,20 +19,20 @@ const Navigation = () => (
 );
 
 const NavigationAuth = () => (
-      <ul>
-        <li>
-          <Link to={ROUTES.LANDING}>Popular Beers</Link>
-        </li>
+      <Navbar>
         <li>
           <Link to={ROUTES.HOME}>Home</Link>
         </li>
         <li>
-          <Link to={ROUTES.ACCOUNT}>Account</Link>
+          <Link to={ROUTES.LANDING}>Popular Beers</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.ACCOUNT}>Profile Page</Link>
         </li>
         <li>
           <SignOutButton />
         </li>
-      </ul>
+      </Navbar>
 );
 
 const NavigationNonAuth = () => (

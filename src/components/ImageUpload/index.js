@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import storage from "../Firebase/index";
+import Container from "react-bootstrap/Container";
 
 class ImageUpload extends Component {
   constructor(props) {
     super(props);
     this.state = {
       image: null,
-      url: "",
+      url: "/b/beertradr.appspot.com/o",
       progress: 0
     };
   }
@@ -48,19 +49,14 @@ class ImageUpload extends Component {
   };
   render() {
     return (
-      <div className="center">
-          <br/>
-          <h2 className="green-text">React Firebase Image Uploader</h2>
-          <br/>
-          <br/>
-        <div className="row">
-          <progress value={this.state.progress} max="100" className="progress" />
-        </div>
-        <br />
-        <br />
-        <br />
-        <div className="file-field input-field">
+  <Container>
+      <div className="photoUploadForm">          
+          <h3 className="green-text">Add a beer to your collection</h3>     
+          <br></br>
+        <div className="green-text">
+        <br></br>
           <div className="btn">
+          <br></br>
             <span>File</span>
             <input type="file" onChange={this.handleChange} />
           </div>
@@ -74,15 +70,15 @@ class ImageUpload extends Component {
         >
           Upload
         </button>
-        <br />
-        <br />
+
         <img
-          src={this.state.url || "https://via.placeholder.com/400x300"}
+          src={this.state.url || "https://via.placeholder.com/150"}
           alt="Uploaded Images"
           height="300"
           width="400"
         />
       </div>
+  </Container>
     );
   }
 }

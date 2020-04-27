@@ -16,6 +16,7 @@ const AccountPage = () => (
       <Jumbotron flair>
         <h1>{authUser.email}</h1>
       </Jumbotron>
+    <div className="photoUpload">
           <ImageUploader
             withIcon={true}
             buttonText='Choose images'
@@ -23,7 +24,8 @@ const AccountPage = () => (
             imgExtension={['.jpg', '.gif', '.png', '.gif']}
             maxFileSize={5242880}
         />
-      </div>  
+      </div>
+    </div>  
     )}
           
   </AuthUserContext.Consumer>
