@@ -30,3 +30,9 @@ code {
 .PWformContainer {
   width: 30em;
 }
+.homepage {
+  text-align: center;
+}
+.navicon {
+  color: #eee;
+}
