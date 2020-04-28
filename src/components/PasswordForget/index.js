@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { 
+  Header, 
+  Form,
+  Button
+} from 'semantic-ui-react';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
 
 const PasswordForgetPage = () => (
-  <div>
-    <h1>PasswordForget</h1>
+  <div className="forgotPassword"> 
+      <Jumbotron fluid>
+          <Container>
+          <Header as="h3" block>
+          <h1>Forgotten Password</h1>
+          </Header>
+          </Container>
+    </Jumbotron>
+        <br></br>
+        <br></br>
+        <br></br>
     <PasswordForgetForm />
-  </div>
+</div>
 );
 
 const INITIAL_STATE = {
@@ -48,7 +63,8 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+  <div class="ui center aligned container">
+      <Form Field onSubmit={this.onSubmit}>
         <input
           name="email"
           value={this.state.email}
@@ -56,12 +72,15 @@ class PasswordForgetFormBase extends Component {
           type="text"
           placeholder="Email Address"
         />
-        <button disabled={isInvalid} type="submit">
+        <br></br>
+        <br></br>
+        <br></br>
+        <Button disabled={isInvalid} type="submit">
           Reset My Password
-        </button>
-
+        </Button>
         {error && <p>{error.message}</p>}
-      </form>
+      </Form>
+  </div>
     );
   }
 }
