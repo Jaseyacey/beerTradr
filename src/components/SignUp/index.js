@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import {
+  Grid,
+  Segment,
+  Button,
+  Header,
+  Message,
+  Icon,
+  Form,
+  GridColumn
+} from "semantic-ui-react";
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
-  </div>
+  <Grid textAlign="center" verticalAlign="middle" className="app">
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as="h1" icon color="orange" textAlign="center">
+            <Icon name="beer" color="orange" />
+            Sign Up To beerTradr
+          </Header>
+  <SignUpForm />
+
+    </Grid.Column>
+</Grid>
 );
 
 const INITIAL_STATE = {
@@ -62,41 +77,42 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <Form onSubmit={this.onSubmit}>
+        <Form.Input
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        <Form.Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Form.Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <Form.Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+        <Button 
+          color= 'orange'
+          fluid size="small">
 
-        {error && <p>{error.message}</p>}
-      </form>
+          Sign Up
+          </Button>
+      </Form>
     );
   }
 }
