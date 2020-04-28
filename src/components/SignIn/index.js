@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
+import {
+  Grid,
+  Form,
+  Segment,
+  Button,
+  Header,
+  Icon
+} from "semantic-ui-react";
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
+<div className="SignInForm">
+      <Header as="h1" icon color="violet" textAlign="center">
+          <Icon name="beer" color="violet" />
+          Login to beertradr
+      </Header>
+        <SignInForm />
+</div>
 );
 
 const INITIAL_STATE = {
@@ -51,31 +59,38 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state;
-
     const isInvalid = password === '' || email === '';
-
+    
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+<Grid textalign ="center" verticalAlign="center" className="SignInForm" >
+  <Form.Group controlId="formBasicEmail">     
+      <form onSubmit={this.onSubmit} size="large">
+            <Segment stacked>
+            <input
+              name="email"
+              value={email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email Address"
+            />
+            <input
+              name="password"
+              value={password}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Password"
+            />
+            <Button variant="primary" disabled={isInvalid} type="submit">
+              Sign In
+            </Button>
+            {error && <p>{error.message}</p>}
+            </Segment>
+        <SignUpLink />
+      <PasswordForgetLink />
+    </form>
+  </Form.Group>
 
-        {error && <p>{error.message}</p>}
-      </form>
+</Grid>
     );
   }
 }
