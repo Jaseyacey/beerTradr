@@ -18,7 +18,6 @@ class FetchRandomBeer extends React.Component {
         }
 
     }
-
     /**
      * componentDidMount
      *
@@ -55,7 +54,7 @@ class FetchRandomBeer extends React.Component {
                 <ul>
                     {items.map(item => (
                         <li key={item.id}>
-                            Name: {item.name} | Email: {item.email}
+                            Beer: {item.beer} | Brewery: {item.brewery} | Image: {item.image}
                         </li>
                     ))}
                 </ul>

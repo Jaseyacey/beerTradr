@@ -41,7 +41,7 @@ const HomePage = () => (
             <p>Post your beer to the next person</p>
           </li>
           <li>
-            <p>Wait for your traded beer to</p>
+            <p>Wait for your traded beer to arrive. </p>
           </li>
           <li>
             <p>Drink away, on only the finest hops</p>
