@@ -1,33 +1,66 @@
-import React from "react";
+import React from 'react';
 
 class FetchRandomBeer extends React.Component {
-  state = {
-    loading: false,
-    beer: null
-  };
 
-  async componentDidMount() {
-    const url = "";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({ beer: data.results[0], loading: false });
-  }
+    /**
+     * constructor
+     *
+     * @object  @props  parent props
+     * @object  @state  component state
+     */
+    constructor(props) {
 
-  render() {
-    if (this.state.loading) {   
-      return <div>looking for a beer</div>;
-    }
-    if (!this.state.beer) {
-      return <div>didn't get a beer</div>;
-      
+        super(props);
+
+        this.state = {
+            items: [],
+            isLoaded: false
+        }
+
     }
 
-    return (
-      <div>
-        <div>{this.state.beer}</div>
-      </div>
-    );
-  }
+    /**
+     * componentDidMount
+     *
+     * Fetch json array of objects from given url and update state.
+     */
+    componentDidMount() {
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    items: json,
+                    isLoaded: true, 
+                })
+            }).catch((err) => {
+                console.log(err);
+            });
+
+    }
+
+    /**
+     * render
+     *
+     * Render UI
+     */
+    render() {
+
+        const { isLoaded, items } = this.state;
+        if (!isLoaded)
+           return <div>Loading...</div>;
+
+        return (
+            <div className="App">
+                <ul>
+                    {items.map(item => (
+                        <li key={item.id}>
+                            Name: {item.name} | Email: {item.email}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
 }
-
 export default FetchRandomBeer;

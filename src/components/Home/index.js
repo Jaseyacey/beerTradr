@@ -50,12 +50,12 @@ const HomePage = () => (
       </div>
     </Grid.Column>
     <Grid.Column width={3}>
-      <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+      
     </Grid.Column>
   </Grid.Row>
   <Grid.Row>
     <Grid.Column width={3}>
-      <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+      
     </Grid.Column>
     <Grid.Column width={10}>
     <div className="homepage">
@@ -67,7 +67,7 @@ const HomePage = () => (
     </div>
     </Grid.Column>
     <Grid.Column width={3}>
-      <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+      
     </Grid.Column>
   </Grid.Row>
 </Grid>

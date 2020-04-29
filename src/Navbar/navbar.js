@@ -14,6 +14,7 @@ const NavBar = () => (
     <Nav className="mr-auto">
       <Nav.Link href="/Home">Home</Nav.Link>
       <Nav.Link href="/Account">Profile Page</Nav.Link>
+      <Nav.Link href="/Contact">Contact Us</Nav.Link>
       <Nav.Link href="/">Popular Beers</Nav.Link>
     </Nav>
     <SignOutButton />
