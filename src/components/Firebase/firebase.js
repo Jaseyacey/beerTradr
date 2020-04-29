@@ -2,14 +2,14 @@ import app from 'firebase/app';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyDSb9XgKL13aZdreKuQhN3jUQ3Vj1IVHz4",
-    authDomain: "beertradr.firebaseapp.com",
-    databaseURL: "https://beertradr.firebaseio.com",
-    projectId: "beertradr",
-    storageBucket: "beertradr.appspot.com",
-    messagingSenderId: "192607524040",
-    appId: "1:192607524040:web:3b6142e8654b3927c081fd",
-    measurementId: "G-P6MKZMLG0D"
+  apiKey: "AIzaSyBZCbdzRjR5aPopBeRkyXH8nkQPmO4FuIc",
+  authDomain: "beertradr2.firebaseapp.com",
+  databaseURL: "https://beertradr2.firebaseio.com",
+  projectId: "beertradr2",
+  storageBucket: "beertradr2.appspot.com",
+  messagingSenderId: "859191988579",
+  appId: "1:859191988579:web:d2a3d507b04e91744e8356",
+  measurementId: "G-QJM5MDK1BR"
 };
 
 class Firebase {

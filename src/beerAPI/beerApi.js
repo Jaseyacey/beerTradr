@@ -25,7 +25,7 @@ class FetchRandomBeer extends React.Component {
      */
     componentDidMount() {
 
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch( '')
             .then(res => res.json())
             .then(json => {
                 this.setState({
@@ -47,10 +47,10 @@ class FetchRandomBeer extends React.Component {
 
         const { isLoaded, items } = this.state;
         if (!isLoaded)
-           return <div>Loading...</div>;
+           return <div>Beer is cooling</div>;
 
-        return (
-            <div className="App">
+        return (    
+            <div className="beerapi">
                 <ul>
                     {items.map(item => (
                         <li key={item.id}>
