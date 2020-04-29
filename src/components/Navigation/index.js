@@ -6,8 +6,8 @@ import { AuthUserContext } from '../Session';
 
 // Navbar imports
 import Button from 'react-bootstrap/Button';
-
 import NavBar from '../../Navbar/navbar';
+import NavBarNoAuth from '../../Navbar/NavBarNoAuth';
 
 const Navigation = () => (
   <div>
@@ -36,18 +36,16 @@ const NavigationAuth = () => (
         <li>
           <SignOutButton />
         </li>
-</NavBar>      
+     </NavBar>
 );
 
 const NavigationNonAuth = () => (
-  <ul>
-    <li>
+  <NavBarNoAuth>
+ 
       <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
+
+  </NavBarNoAuth> 
 );
 
 export default Navigation;

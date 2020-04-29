@@ -54,7 +54,7 @@ class FetchRandomBeer extends React.Component {
                 <ul>
                     {items.map(item => (
                         <li key={item.id}>
-                            Beer: {item.beer} | Brewery: {item.brewery} | Image: {item.image}
+                            Beer: {item.beer} | Brewery: {item.email} | Image: {item.image}
                         </li>
                     ))}
                 </ul>
