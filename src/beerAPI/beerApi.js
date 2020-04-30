@@ -24,7 +24,7 @@ class FetchRandomBeer extends React.Component {
      */
     componentDidMount() {
 
-        fetch( 'https://api.untappd.com/V4/search/beer?client_secret=4AF6BD29B52702BE09AADAFCB24F059234992F7E&client_id=D63C2A2C528A0FEC8B83E4DC9AD6068647717775')
+        fetch( 'https://api.untappd.com/v4/user/info/OBMJeff?client_id=D63C2A2C528A0FEC8B83E4DC9AD6068647717775&client_secret=4AF6BD29B52702BE09AADAFCB24F059234992F7E')
             .then(res => res.json())
             .then(json => {
                 this.setState({

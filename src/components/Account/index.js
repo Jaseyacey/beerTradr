@@ -1,8 +1,5 @@
 import React from 'react';
-import NavBar from "../../Navbar/navbar"
 import { AuthUserContext } from '../Session';
-import { PasswordForgetForm } from '../PasswordForget';
-import PasswordChangeForm from '../PasswordChange';
 import { withAuthorization } from '../Session';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
