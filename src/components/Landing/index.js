@@ -14,7 +14,7 @@ const Landing = () => (
   <Container>
   <Row>
     <Col>Login</Col>
-    <Col xs={6}>what we are about (wider)</Col>
+    <Col xs={6}>This is a craft beer trading site.</Col>
     <Col>Sign Up</Col>
   </Row>
   <Row>

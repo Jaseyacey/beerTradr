@@ -1,0 +1,23 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Beer",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Beer",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Brewery",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Trading",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
